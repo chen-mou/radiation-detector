@@ -22,7 +22,7 @@ function flushData() {
                 date: val[1].trim()
             }
         })
-        // console.log(data)
+        console.log(data)
     })
 }
 
