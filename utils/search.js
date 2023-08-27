@@ -24,7 +24,7 @@ function flushData() {
         })
         console.log(data)
     }).catch(err => {
-        console.log(err.meta)
+        console.log(err.message)
     })
 }
 
