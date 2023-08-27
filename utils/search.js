@@ -31,6 +31,12 @@ function flushData() {
         console.log(err.message)
         // flushData()
     })
+
+    axios.get("https://www.baidu.com").then(res => {
+        console.log("成功")
+    }).catch(res => {
+        console.log("失败")
+    })
 }
 
 function getAreaRadiation(name) {
