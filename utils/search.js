@@ -5,7 +5,11 @@ let data = {}
 
 
 function flushData() {
-    axios.get("https://data.rmtc.org.cn/gis/listtype0M.html").then(res => {
+    axios.get("https://data.rmtc.org.cn/gis/listtype0M.html", {
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+        }
+    }).then(res => {
         res = res.data.replace("\t", "")
         const $ = cheerio.load(res, {
             normalizeWhitespace: false,
@@ -25,7 +29,7 @@ function flushData() {
         console.log(data)
     }).catch(err => {
         console.log(err.message)
-        flushData()
+        // flushData()
     })
 }
 
