@@ -64,7 +64,7 @@ app.get("/api/areaRadiation", middle, function (req, res) {
   数据来源:生态环境部辐射环境检测技术中心`, meId, userId))
 });
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 15001;
 
 async function bootstrap() {
   // await initDB();
