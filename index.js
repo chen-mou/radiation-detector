@@ -54,10 +54,12 @@ app.get("/api/areaRadiation", middle, function (req, res) {
       type = body.MsgType;
   if (type != "text") {
     res.json(result.text("不支持的消息类型", meId, userId))
+    return
   }
   const data = search.getAreaRadiation(content)
   if (data == null) {
     res.json(result.text("消息应为一个省份名", meId, userId))
+    return
   }
   res.json(result.text(`${content}省空气吸收剂量率为:${data.value}
   数据截止日期:${data.date}
