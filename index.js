@@ -41,6 +41,7 @@ function middle(req, res, next) {
   switch (body.action) {
     case "CheckContainerPath":
       res.json({});
+      break;
     default:
       next()
   }
@@ -52,7 +53,7 @@ app.post("/api/areaRadiation", middle, function (req, res) {
       meId = body.ToUserName,
       content = body.Content,
       type = body.MsgType;
-  console.log(type)
+  console.log(body)
   if (type != "text") {
     res.json(result.text("不支持的消息类型", meId, userId))
     return
