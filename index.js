@@ -46,12 +46,13 @@ function middle(req, res, next) {
   }
 }
 
-app.get("/api/areaRadiation", middle, function (req, res) {
+app.post("/api/areaRadiation", middle, function (req, res) {
   const body = req.body,
       userId = body.FromUserName,
       meId = body.ToUserName,
       content = body.Content,
       type = body.MsgType;
+  console.log(type)
   if (type != "text") {
     res.json(result.text("不支持的消息类型", meId, userId))
     return
